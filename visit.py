@@ -5,8 +5,8 @@ from selenium.webdriver.common.by import By
 from datetime import datetime
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.chrome.options import Options
-import time
-from mac_notifications import client
+#import time
+#from mac_notifications import client
 
 
 # Set the path to the ChromeDriver executable
@@ -66,12 +66,7 @@ def fetchlinks():
             listofnewresults.append(eachObject.get_attribute('href')+'\n')
     retrieved_links_file.close()
     driver.close()
-    if len(listofnewresults) > 0 : 
-        print(listofnewresults)
-        client.create_notification(
-            title="New listing is found",
-            subtitle=''.join(listofnewresults)
-        )
+    print(listofnewresults)
 
 def fetchlinks_heimstaden():
     listofnewresults=[]
@@ -90,11 +85,7 @@ def fetchlinks_heimstaden():
             listofnewresults.append(eachObject.get_attribute('href')+'\n')
     retrieved_links_file.close()
     driver.close()
-    if len(listofnewresults) > 0 : 
-        client.create_notification(
-            title="New listing is found",
-            subtitle=''.join(listofnewresults)
-        )
+    print(listofnewresults)
 
 def fetchlinks_berlinhaus():
     listofnewresults=[]
@@ -113,11 +104,7 @@ def fetchlinks_berlinhaus():
             listofnewresults.append(eachObject.get_attribute('data-link')+'\n')
     retrieved_links_file.close()
     driver.close()
-    if len(listofnewresults) > 0 : 
-        client.create_notification(
-            title="New listing is found",
-            subtitle=''.join(listofnewresults)
-        )
+    print(listofnewresults)
 
 def fetchlinks_livingInBerlin():
     listofnewresults=[]
@@ -136,11 +123,7 @@ def fetchlinks_livingInBerlin():
             listofnewresults.append(tag+'\n')
     retrieved_links_file.close()
     driver.close()
-    if len(listofnewresults) > 0 : 
-        client.create_notification(
-            title="New listing is found",
-            subtitle=''.join(listofnewresults)
-        )
+    print(listofnewresults)
 
 def fetchlinks_inberlin():
     listofnewresults=[]
@@ -158,11 +141,7 @@ def fetchlinks_inberlin():
             listofnewresults.append(eachObject.get_attribute('href')+'\n')
     retrieved_links_file.close()
     driver.close()
-    if len(listofnewresults) > 0 : 
-        client.create_notification(
-            title="New listing is found",
-            subtitle=''.join(listofnewresults)
-        )
+    print(listofnewresults)
 
 
 
