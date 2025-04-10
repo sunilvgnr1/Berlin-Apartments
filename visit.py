@@ -18,7 +18,7 @@ chrome_options.add_argument("--headless")  # Add this line if you are running on
 
 
 # Using readlines()
-apartment_links_file = open('/Users/sunil.vaggannavar/project-appartment/retrieved_links.txt', 'r+')
+apartment_links_file = open('retrieved_links.txt', 'r+')
 apartment_links = apartment_links_file.readlines()
 
 
@@ -54,7 +54,7 @@ def fetchlinks():
     search_button = driver.find_element(By.ID, "search-objects-result")
     print(search_button.text)
     list_of_results = driver.find_elements(By.CLASS_NAME, "object-list__content-container")
-    retrieved_links_file = open('/Users/sunil.vaggannavar/project-appartment/retrieved_links.txt', 'r+')
+    retrieved_links_file = open('retrieved_links.txt', 'r+')
     listOfLines = retrieved_links_file.readlines()
     title = search_button.text+' - '+ datetime.now().isoformat()
     retrieved_links_file.write(title)
@@ -75,7 +75,7 @@ def fetchlinks_heimstaden():
     driver = webdriver.Chrome( options=chrome_options)
     driver.get(target_url)
     list_of_results = driver.find_elements(By.XPATH, "//figure/a")
-    retrieved_links_file = open('/Users/sunil.vaggannavar/project-appartment/retrieved_links.txt', 'r+')
+    retrieved_links_file = open('retrieved_links.txt', 'r+')
     listOfLines = retrieved_links_file.readlines()
     
     for eachObject in list_of_results:
@@ -94,7 +94,7 @@ def fetchlinks_berlinhaus():
     driver = webdriver.Chrome( options=chrome_options)
     driver.get(target_url)
     list_of_results = driver.find_elements(By.CLASS_NAME, "property_listing")
-    retrieved_links_file = open('/Users/sunil.vaggannavar/project-appartment/retrieved_links.txt', 'r+')
+    retrieved_links_file = open('retrieved_links.txt', 'r+')
     listOfLines = retrieved_links_file.readlines()
     header = driver.find_element(By.CLASS_NAME,'title_prop')
     for eachObject in list_of_results:
@@ -113,7 +113,7 @@ def fetchlinks_livingInBerlin():
     driver = webdriver.Chrome( options=chrome_options)
     driver.get(target_url)
     list_of_results = driver.find_elements(By.CLASS_NAME, "uk-text-right")
-    retrieved_links_file = open('/Users/sunil.vaggannavar/project-appartment/retrieved_links.txt', 'r+')
+    retrieved_links_file = open('retrieved_links.txt', 'r+')
     listOfLines = retrieved_links_file.readlines()
     for eachObject in list_of_results:
         tag = eachObject.find_element(By.TAG_NAME, 'a').get_attribute('href')
@@ -132,7 +132,7 @@ def fetchlinks_inberlin():
     driver = webdriver.Chrome( options=chrome_options)
     driver.get(target_url)
     list_of_results = driver.find_elements(By.CLASS_NAME, "org-but")
-    retrieved_links_file = open('/Users/sunil.vaggannavar/project-appartment/retrieved_links.txt', 'r+')
+    retrieved_links_file = open('retrieved_links.txt', 'r+')
     listOfLines = retrieved_links_file.readlines()
     for eachObject in list_of_results:
         if eachObject.get_attribute('href')+'\n' not in listOfLines:
