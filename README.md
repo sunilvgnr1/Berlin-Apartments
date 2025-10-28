@@ -122,6 +122,7 @@ Feel free to fork this repository, make improvements, and submit pull requests. 
 * Adding support for other operating systems (alternative notification systems).
 * Improving the reliability of selectors.
 * Adding proper delays instead of placeholder loops.
+* Done
 
 ## License
 
